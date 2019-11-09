@@ -32,7 +32,7 @@ create table Bank_Accounts{
 create table Account_Link{
   id auto_increment bigint primary key;
   owner_link varchar(125) not null;
-  account_link bigint primary key not null;
+  account_link bigint not null;
   creation_date timestamp not null default current_timestamp;
   }
 
