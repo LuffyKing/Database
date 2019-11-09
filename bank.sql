@@ -1,7 +1,7 @@
 create table Users{
-  username varchar(255) primary key not null,
-  preferred_name varchar(255) not null,
-  email varchar(255) unique not null;
+  username varchar(125) primary key not null,
+  preferred_name varchar(125) not null,
+  email varchar(125) unique not null;
   last_login_date timestamp not null default current_timestamp;
   creation_date timestamp not null;
   birthday date not null;
@@ -29,6 +29,13 @@ create table Bank_Accounts{
   is_joint_account tinyint(1) not null default 0;
   }
 
+create table Account_Link{
+  id auto_increment bigint primary key;
+  owner_link varchar(125) not null;
+  account_link bigint primary key not null;
+  creation_date timestamp not null default current_timestamp;
+  }
+
 create table Bank_Branches{
   bank mediumint not null;
   sortcode int primary key not null;
@@ -49,7 +56,7 @@ create table Bank_Branches{
   create table Bank{
     id mediumint auto_increment primary key not null;
     postal_code varchar(10) unique not null;
-    name varchar(255) not null;
+    name varchar(125) not null;
     }
 
   create table Errors{
